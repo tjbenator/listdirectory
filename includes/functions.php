@@ -89,7 +89,7 @@ function create_thumbnail($image) {
 /* Echos out table with directory */
 function ls_directory($g, $ext_excludes = array()) {
 	$columns = explode(" ", columns);
-	$excludes = array_merge(array('.', '..', './index.php', './includes', './thumbnails'), $ext_excludes);
+	$excludes = array_merge(array('.', '..', './index.php', './includes', './thumbnails', ./'README.md'), $ext_excludes);
 	$key = "0";
 	foreach (glob($g) as $dirfile) {
 		if(in_array($dirfile, $excludes))
