@@ -4,8 +4,7 @@
 
 	<div id='footer'>
 <?php
-		echo "<i>This website is for development purposes only</i><br />";
-		echo "&copy; Travis Beck";
+		echo "<a href='https://github.com/tjbenator'>&copy; Travis Beck</a>";
 ?>
 	</div>
 
