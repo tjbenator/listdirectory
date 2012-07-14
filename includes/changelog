@@ -1,0 +1,11 @@
+2012-03-06 ###
+        Added sorttable.js to allow you to sort by column on the fly. SOURCE: http://www.kryogenix.org/code/browser/sorttable/
+        Modified style. Moved some styling from index to stylesheet. Added pointer cursor for header.
+	Improved thumbnail appearance by cropping with css. Allows for future changes with out rendering thumbnails again. 
+
+2012-03-05 ###
+	Fixed GIF thumbnails. They were missing from an array. 
+	Made variable in config for hiding the thumbnails column
+	Fixed error with sort() when no files are present. Added an if statement.
+	Started Changelog (if you haven't noticed already xD)
+

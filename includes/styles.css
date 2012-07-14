@@ -1,0 +1,173 @@
+* {
+        margin: 0px;
+        padding: 0px;
+}
+
+a:link, a:visited, a:active, a:hover { 
+	font-weight: bold;
+	text-decoration: none;
+}
+a:link, a:visited, a:active { 
+	color: #FFFFFF; 
+}
+
+a:hover {  
+	color: #993333;
+}
+
+
+#header, #footer {
+	padding-top: 10px;
+	color: #FFFFFF;
+	background-color: #993333;
+	width: auto;
+	height: 50px;
+}
+
+.menu {
+	background-color: #1F1F1F;
+	width: auto;	
+	height: 30px;
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+
+}
+
+.menu p {
+	display: inline;
+}
+
+.menu ul, .menu li {
+	display: inline;
+	font-weight: bold;
+}
+
+.menu .menuitem {
+	padding-top: 4px;
+	height: 26px;
+	font-weight:bold;
+	padding-left: 4px;
+	padding-right: 4px;
+	display: inline-block;
+	margin-left: .5em;
+	margin-right: .5em;
+}
+
+.menu .menuitem:hover {
+	background-color: #FFFFFF;
+}
+
+.menu .menuitem:hover a {
+	color: #1F1F1F;
+}
+
+.menuitem a {
+	color: white;	
+	text-decoration:none;
+	font-size: 18px;
+}
+
+a.row {
+	display: inline;
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+}
+
+body {
+	font-family:"Times New Roman", Times, sans-serif;
+	color:#271717;
+	text-align:center; /* for IE */
+	margin:0 auto; /* for the rest */
+	font:15px arial,sans-serif;
+	background-color: #993333;
+	/* Uncomment this if you want a background  */
+	/* background-image: url('background.png'); */
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-attachment: fixed; 
+
+}
+
+
+#columnbackground {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background-color: #666666;
+}
+
+
+.content {
+	margin: 0 auto;
+	width: 1010px;
+	background-color: #D7D3D2;
+	padding-bottom: 8px;
+	margin-bottom: 7px;
+	margin-top: 7px;
+}
+
+.heading1 {
+	padding-top: 4px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-bottom: 4px;
+	background-color: white;
+	font-size: 22px;
+	font-weight: bold;
+	height: 26px;
+}
+
+#wrap {
+	width: auto;
+	/** margin: 0 auto; **/
+	/** background-color: #736F6E; **/ 
+	margin-right: auto;
+	margin-left: auto;
+}
+
+table {
+	margin:0 auto;
+	width: 1010px; 
+	background-color: #D7D3D2;
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+
+/* Sortable tables */
+table.sortable thead {
+    font-weight: bold;
+}
+
+th {
+	height:50px;
+	background-color: white;
+}
+
+td {
+	background-color: #B9B5B4;
+	padding-left: 10px;
+	cursor:pointer;
+}
+
+tr:hover td {
+	color: white;
+        background-color: #1F1F1F;
+}
+
+td.thumbnails, td.nothumbnail {
+	padding-left: 0px;
+	width: 110px;
+}
+
+.hlt td {
+        background-color: yellow;
+        color: black;
+}
+
+.thumbnails {
+	width: 100px;
+	height: 70px;
+	overflow: hidden;
+	margin: 5px;
+	/*margin-bottom: 5px;*/
+}
