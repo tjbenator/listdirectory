@@ -16,7 +16,8 @@ $exclude = array('./filename');
 Define where your config.php is located. The menu.php, styles.css, 
 sorttables.js, header.php, and footer.php will be pulled relative to 
 config.php                                                                   */
-require_once './includes/config.php';
+//require_once './includes/config.php';
+$config = "includes/config.php"; $find = true; while ($find) { if (file_exists($config)) { require_once($config); $find = false; } else { $config = "../" . $config; } }
 
 /* Define the directory you want to list */
 define('directory', './*');

@@ -1,12 +1,20 @@
 <?php
-echo "<!--Including 'functions.php'-->\n";
-
 /* Include all *.col.php */
 foreach (glob(dirname(__file__)."/columns/*.col.php") as $the_column)
 {
     include "$the_column";
 }
-/* */
+
+/* Get column specific stylesheets */
+function get_col_styles() {
+	global $includes_uri;
+	echo "<!--Begin Column Styles-->\n";
+	foreach (glob(dirname(__file__)."/columns/*.col.css") as $the_style) {
+		echo "\t\t<link rel=\"stylesheet\" type=\"text/css\" href=\"".$includes_uri.'/columns/'.basename($the_style)."\" />\n";
+	}
+	echo "\t<!--End Column Styles-->\n";
+	/* */
+}
 
 function _format_bytes($a_bytes) {
     if ($a_bytes < 1024) {
@@ -30,66 +38,11 @@ function _format_bytes($a_bytes) {
     }
 }
 
-function create_thumbnail($image) {
-	//Extensions excepted in to thumbnail function. 
-	$pattern="(\.jpg$)|(\.png$)|(\.gif$)";
-	//Check and see if it is an image
-	if(eregi($pattern, $image)) {
-		//Check to see if thumbnail exists
-		if (!file_exists('thumbnails/'.$image)) {
-			$filename_pieces = explode('.', $image);
-			$ext = strtolower(array_pop($filename_pieces));
-			//start resizing		
-			$image_size = getimagesize($image);
-			$image_width = $image_size[0];
-			$image_height = $image_size[1];
-			
-			$new_size = ($image_width + $image_height) / ($image_width * ($image_height/45));
-			$new_width = $image_width * $new_size;
-			$new_height = $image_height * $new_size;
-			
-			$new_image = imagecreatetruecolor($new_width, $new_height);
-			
-			switch ($ext) {
-				case "jpg":
-					$old_image = imagecreatefromjpeg($image);
-					break;
-				case "png":
-					$old_image = imagecreatefrompng($image);
-					break;
-				case "gif":
-					$old_image = imagecreatefromgif($image);
-					break;
-			}
-			
-			imagecopyresized($new_image, $old_image, 0, 0, 0, 0, $new_width, $new_height, $image_width, $image_height);
-			switch ($ext) {
-				case "jpg":
-					imagejpeg($new_image, 'thumbnails/'.$image);
-					break;
-				case "png":
-					$newname = 'thumbnails/'.$image;
-					imagepng($new_image, $newname);
-					break;
-				case "gif":
-					imagegif($new_image, 'thumbnails/'.$image);
-					break;
-			}
-		}
-	//Return Thumbnail
-	return "<img src='thumbnails/$image' />";
-	} else {
-	//Isn't a picture so "None"
-	return "None";
-	}
-}
-
-
 /* Takes path and regex.  EXAMPLE: ./path/*.txt 		*/
 /* Echos out table with directory */
 function ls_directory($g, $ext_excludes = array()) {
 	$columns = explode(" ", columns);
-	$excludes = array_merge(array('.', '..', './index.php', './includes', './thumbnails', './README.md'), $ext_excludes);
+	$excludes = array_merge(array('.', '..', './index.php', './includes', './README.md'), $ext_excludes);
 	$key = "0";
 	foreach (glob($g) as $dirfile) {
 		if(in_array($dirfile, $excludes))

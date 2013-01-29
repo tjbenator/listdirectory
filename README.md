@@ -6,7 +6,8 @@ PHP Directory Listings
 Want to display a folder to the world? Want to be able to exclude certain files or add custom columns? Well then, I think you have found the right place.
 
 1. Download to your webserver
-2. Edit index.php for page specific excludes, title, date format, columns, and config location (If you changed it's realitive location).
+2. Edit index.php for page specific excludes, title, date format, columns.
+NOTE: The index.php will find the includes/ folder as long as it is in the same directory or a directory below.
 3. Launch the page and you should see a directory listing.
 
 Need something custom?
