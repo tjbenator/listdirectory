@@ -16,3 +16,5 @@ Need something custom?
 I am trying to make it more customizable. I have just recently added an easy way to create custom columns. Just have a look at includes/columns/Template.php on how to create your own columns.
 
 Let me know if you have a suggestion, bug, or feature request. I made this for home server and have also used it in many other implementations.
+
+See it in action: http://tjbenator.com/Portfolio/listdirectory
