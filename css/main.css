@@ -106,17 +106,6 @@ body {
 	margin-top: 7px;
 }
 
-.heading1 {
-	padding-top: 4px;
-	margin-right: auto;
-	margin-left: auto;
-	margin-bottom: 4px;
-	background-color: white;
-	font-size: 22px;
-	font-weight: bold;
-	height: 26px;
-}
-
 #wrap {
 	width: auto;
 	/** margin: 0 auto; **/
