@@ -29,13 +29,17 @@ $ListDirectory->addExclude('./filename');
 Thumbnails
 Filename
 Size
-DateModified
-DateAccessed
+Date Modified
+Date Accessed
+Type
 inode
-Permissions
 */
 
-define('columns', 'Thumbnail, Filename, Size, Date Accessed');
+define('columns', 'Thumbnail, Filename, Size, Date Modified');
+
+/**
+End Configuration
+*/
 
 /*****************************************************************************/
 
@@ -45,7 +49,6 @@ include(header);
 $ListDirectory->setDirectory(directory);
 $ListDirectory->display(columns);
 
-/*****************************************************************************/
 
 /** Display Footer **/
 include(footer);
