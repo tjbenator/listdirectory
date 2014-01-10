@@ -16,7 +16,7 @@ $init = "includes/init.php"; $find = true; while ($find) { if (file_exists($init
 define('title',  $_SERVER['REQUEST_URI']);
 
 /* Define the directory you want to list */
-define('directory', './subfolder/*');
+define('directory', './*');
 
 /**
  Define files that you want to exclude in this directory. Can be realtive paths, full path, or just filename. 
