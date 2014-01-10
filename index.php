@@ -46,6 +46,7 @@ End Configuration
 /** Display Header **/
 include(header);
 
+echo "<div class='content'>" . breadcrumbs() . "</div>";
 $ListDirectory->setDirectory(directory);
 $ListDirectory->display(columns);
 

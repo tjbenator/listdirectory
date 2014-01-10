@@ -3,10 +3,21 @@
         padding: 0px;
 }
 
+body {
+	font-family: 'Montserrat Alternates', sans-serif;
+	color:#271717;
+	text-align:center; /* for IE */
+	margin:0 auto; /* for the rest */
+	font-size: 14px;
+	background-color: #993333;
+	background-image: url('../img/red.png');
+}
+
 a:link, a:visited, a:active, a:hover { 
 	font-weight: bold;
 	text-decoration: none;
 }
+
 a:link, a:visited, a:active { 
 	color: #FFFFFF; 
 }
@@ -19,15 +30,27 @@ a:hover {
 #header, #footer {
 	padding-top: 10px;
 	color: #FFFFFF;
-	background-color: #993333;
 	width: auto;
-	height: 50px;
+	text-shadow: -3px 0 black, 0 3px black, 3px 0 black, 0 -3px black;
+}
+
+#header {
+	height: 55px;
+}
+
+#header h1 {
+	font-size: 36px;
+}
+
+#footer {
+	margin-bottom: 48px;
 }
 
 .menu {
 	background-color: #1F1F1F;
+	background-color:rgba(31,31,31,0.7);
 	width: auto;	
-	height: 30px;
+	height: 24px;
 	border-top: 2px solid white;
 	border-bottom: 2px solid white;
 
@@ -48,7 +71,8 @@ a:hover {
 	font-weight:bold;
 	padding-left: 4px;
 	padding-right: 4px;
-	display: inline-block;
+	padding-bottom: 4px;
+	display: inline;
 	margin-left: .5em;
 	margin-right: .5em;
 }
@@ -56,6 +80,7 @@ a:hover {
 .menu .menuitem:hover {
 	background-color: #FFFFFF;
 }
+
 
 .menu .menuitem:hover a {
 	color: #1F1F1F;
@@ -74,38 +99,64 @@ a.row {
 	text-decoration: none;
 }
 
-body {
-	font-family:"Times New Roman", Times, sans-serif;
-	color:#271717;
-	text-align:center; /* for IE */
-	margin:0 auto; /* for the rest */
-	font:15px arial,sans-serif;
-	background-color: #993333;
-	/* Uncomment this if you want a background  */
-	/* background-image: url('background.png'); */
-	background-repeat:no-repeat;
-	background-position:center center;
-	background-attachment: fixed; 
-
-}
-
-
 #columnbackground {
 	padding-top: 6px;
 	padding-bottom: 6px;
 	background-color: #666666;
+	background-image: url('../img/gray.png');
 }
 
-
 .content {
+	position: relative;
 	margin: 0 auto;
-	width: 1010px;
-	background-color: #D7D3D2;
+	width: 1006px; /* 1010 minus 4 (3px on both sides)*/
+	/* background-color: #D7D3D2; */
+	background-color: #1F1F1F;
+	background-color:rgba(31,31,31,0.7);
+	color: white;
 	padding-bottom: 8px;
 	margin-bottom: 7px;
 	margin-top: 7px;
+	border: 2px solid white;
+	padding: 2px;
 }
 
+.content p {
+	margin: 5px;
+}
+
+h2, .breadcrumbs {
+	width: 100%;
+	padding-top: 8px;
+	margin-right: auto;
+	margin-left: auto;
+	color: black;
+	background-color: white;
+	font-size: 22px;
+	font-weight: bold;
+	height: 40px;
+}
+
+.breadcrumbs a:link, .breadcrumbs a:link, .breadcrumbs a:visited, .breadcrumbs a:active{
+	color: #271717;
+}
+
+.content .functions {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	align: right:
+	z-index: 1000;
+	margin-left: 5px;
+	margin-top: 8px;
+}
+
+.content .functions a {
+	margin-left: 5px;
+	font-size: 18px;
+	padding: 6px;
+	background-color: #1F1F1F; 
+}
 #wrap {
 	width: auto;
 	/** margin: 0 auto; **/
@@ -116,10 +167,12 @@ body {
 
 table {
 	margin:0 auto;
-	width: 1010px; 
+	width: 1006px; 
 	background-color: #D7D3D2;
-	margin-top: 3px;
-	margin-bottom: 3px;
+	background-color:rgba(31,31,31,0.7);
+	margin-top: 7px;
+	margin-bottom: 7px;
+	border: 2px solid white;
 }
 
 /* Sortable tables */
@@ -128,19 +181,24 @@ table.sortable thead {
 }
 
 th {
-	height:50px;
+	height:40px;
 	background-color: white;
+	font-size: 22px;
+	text-align: center;
 }
 
 td {
 	background-color: #B9B5B4;
+	background-color:rgba(31,31,31,0.7);
+	color: white;
 	padding-left: 10px;
 	cursor:pointer;
+	text-align: left;
 }
 
 tr:hover td {
 	color: white;
-        background-color: #1F1F1F;
+	background-color: #666666;
 }
 
 td.thumbnails, td.nothumbnail {
@@ -149,8 +207,8 @@ td.thumbnails, td.nothumbnail {
 }
 
 .hlt td {
-        background-color: yellow;
-        color: black;
+    background-color: yellow;
+    color: black;
 }
 
 .thumbnails {
@@ -159,4 +217,72 @@ td.thumbnails, td.nothumbnail {
 	overflow: hidden;
 	margin: 5px;
 	/*margin-bottom: 5px;*/
+}
+
+
+
+/** Floating message box **/
+
+#floatbottom {
+	/** margin: -35px 0 0 0; **/
+	position: fixed;
+	bottom: 0px;
+	text-align: center; 
+	width: 100%; 
+	margin: 0 auto;
+}
+
+#floatbottom #messagebox {
+	background-color:rgba(31,31,31,0.7);
+    border-top: solid #FFFFFF 2px;
+    border-left: solid #FFFFFF 2px;
+    border-right: solid #FFFFFF 2px;
+    margin-right: auto;
+    margin-left: auto;
+	padding: 5px;
+	padding-left: 15px;
+	padding-right: 15px;
+	width: 750px;
+	height: 20px;
+	-moz-border-radius-topleft: 15px;
+	border-top-left-radius: 15px;
+	-moz-border-radius-topright: 15px;
+	border-top-right-radius: 15px;
+}
+
+#floatbottom #messagebox p, #floatbottom #messagebox span {
+	color: #FFF;
+	font-weight: bold;
+}
+
+#floatbottom #messagebox label, #floatbottom #messagebox input, #floatbottom #messagebox select, #floatbottom #messagebox textarea, #floatbottom #messagebox span{
+	background-color: transparent;
+	display: inline;
+	float: left;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+#floatbottom #messagebox label, #floatbottom #messagebox input, #floatbottom #messagebox select, #floatbottom #messagebox textarea {
+    width: 150px;
+	height: 20px;
+}
+#floatbottom #messagebox label, #floatbottom #messagebox input, #floatbottom #messagebox select, #floatbottom #messagebox textarea {
+    border: solid #FFFFFF 1px;
+    color: #FFFFFF;
+    padding: 1px;
+}
+
+#floatbottom #messagebox input[type="submit"] {
+	color: #000;
+	Background-Color: #FFF;
+}
+
+#floatbottom #messagebox input[type="submit"]:hover {
+	color: #000;
+	Background-Color: #D7D3D2;
+}
+
+#floatbottom #messagebox input[type="checkbox"] {
+	width: 20px;
 }

@@ -9,6 +9,8 @@ $ListDirectory = new ListDirectory();
 /* Include our site wide configuration file */
 include($includes . '/config.php');
 
+include($includes . '/functions.php');
+
 /* Include all *.col.php */
 foreach (glob($includes . "/columns/*.col.php") as $the_column)
 {
