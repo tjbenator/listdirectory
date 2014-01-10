@@ -8,7 +8,8 @@ Want to display a folder to the world? Want to be able to exclude certain files 
 1. Download to your webserver
 2. Edit index.php for page specific excludes, title, date format, columns.
 NOTE: The index.php will find the includes/ folder as long as it is in the same directory or in a parent directory.
-3. Launch the page and you should see a directory listing.
+3. Verify that your webserver can write to the directory if you want thumbnails.
+4. Launch the page and you should see a directory listing.
 
 Need something custom?
 
