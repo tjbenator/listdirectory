@@ -1,8 +1,2 @@
 <?php
-function inode_Header () {
-return "<th>inode</th>\n";
-}
-
-function inode_Item ($file) {
-	return "<td>" . fileinode($file['name']) . "</td>\n";
-}
+$ListDirectory->addColumn('inodes', function($filename) { return array('data' => fileinode($filename)); });

@@ -1,19 +1,25 @@
-<?
-/******************************************************************************
-User configured options are at the top of index.php such as page title, listing
-directories, and excludes.
-******************************************************************************/
+<?php
+/* Where is your stylesheet? */
+define('main_css', 'css/main.css');
 
-/* Includes are in the same folder as this config */
-$includes = dirname(__FILE__);
+/* Default is to use jquery's cdn */
+define('jquery', 'http://code.jquery.com/jquery-1.10.1.min.js');
 
-/* This is where the css and js files are stored */
-$includes_uri = 'http://'.str_replace(array($_SERVER['DOCUMENT_ROOT']), $_SERVER['SERVER_NAME'].'/', $includes);
+/**
+Location of sorttable javascript
+Source: http://www.kryogenix.org/code/browser/sorttable/ 
+Author: Stuart Langridge
+*/
+define('sorttable', 'js/sorttable.js');
 
-/* Functions that are used on each page */
-include_once(dirname(__FILE__) . '/functions.php');
 
-/* Header and Footer locations */
-$header = dirname(__FILE__) . '/header.php';
-$footer = dirname(__FILE__) . '/footer.php';
-$menu = dirname(__FILE__) . '/menu.php';
+/**
+Global Excludes
+*/
+$ListDirectory->addExclude('css');
+$ListDirectory->addExclude('js');
+$ListDirectory->addExclude('includes');
+
+/* Define the Date Format. This is used on all columns. For more info visit: 
+http://php.net/manual/en/function.date.php                                      */
+define('date_format', "M d Y g:i A");
