@@ -26,7 +26,7 @@ $ListDirectory->addExclude('./filename');
 
 
 /* Define Columns in the order you want them to appear. 
-Thumbnails
+Thumbnail
 Filename
 Size
 Date Modified

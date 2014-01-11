@@ -2,14 +2,14 @@
 function format_bytes($bytes) {
 	if ($bytes < 1024) {
 		return $bytes .' B';
-	} elseif ($bytes < 1024^2) {
+	} elseif ($bytes < 1048576) {
 		return round($bytes / 1024, 2) .' K';
-	} elseif ($bytes < 1024^3) {
-		return round($bytes / 1024^2, 2) . ' M';
-	} elseif ($bytes < 1024^4) {
-		return round($bytes / 1024^3, 2) . ' G';
+	} elseif ($bytes < 1073741824) {
+		return round($bytes / 1048576, 2) . ' M';
+	} elseif ($bytes < 1099511627776) {
+		return round($bytes / 1073741824, 2) . ' G';
 	} else {
-		return round($bytes / 1024^4, 2) .' T';
+		return round($bytes / 1099511627776, 2) .' T';
 	}
 }
 
