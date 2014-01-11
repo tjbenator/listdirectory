@@ -47,8 +47,10 @@ End Configuration
 include(header);
 
 echo "<div class='content'>" . breadcrumbs() . "</div>";
+echo "<div class='content'>";
 $ListDirectory->setDirectory(directory);
 $ListDirectory->display(columns);
+echo "</div>";
 
 
 /** Display Footer **/

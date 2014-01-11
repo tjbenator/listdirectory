@@ -13,3 +13,4 @@
 
 <?php include menu; ?>
 <div id='columnbackground'>
+	<div id='content'>

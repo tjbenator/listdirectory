@@ -106,10 +106,14 @@ a.row {
 	background-image: url('../img/gray.png');
 }
 
-.content {
-	position: relative;
+#content {
 	margin: 0 auto;
 	width: 1006px; /* 1010 minus 4 (3px on both sides)*/
+}
+
+.content {
+	position: relative;
+	width: 100%;
 	/* background-color: #D7D3D2; */
 	background-color: #1F1F1F;
 	background-color:rgba(31,31,31,0.7);
@@ -128,8 +132,6 @@ a.row {
 h2, .breadcrumbs {
 	width: 100%;
 	padding-top: 8px;
-	margin-right: auto;
-	margin-left: auto;
 	color: black;
 	background-color: white;
 	font-size: 22px;
@@ -166,14 +168,26 @@ h2, .breadcrumbs {
 }
 
 table {
-	margin:0 auto;
-	width: 1006px; 
-	background-color: #D7D3D2;
-	background-color:rgba(31,31,31,0.7);
-	margin-top: 7px;
-	margin-bottom: 7px;
-	border: 2px solid white;
+	width: 100%; 
+	border-collapse:collapse;
 }
+
+table td, table th {
+  border: 2px solid black;
+}
+table tr:first-child th {
+  border-top: 0;
+}
+table tr:last-child td {
+  border-bottom: 0;
+}
+table tr td:first-child, table tr th:first-child {
+  border-left: 0;
+}
+table tr td:last-child, table tr th:last-child {
+  border-right: 0;
+}
+
 
 /* Sortable tables */
 table.sortable thead {
@@ -234,11 +248,11 @@ td.thumbnails, td.nothumbnail {
 
 #floatbottom #messagebox {
 	background-color:rgba(31,31,31,0.7);
-    border-top: solid #FFFFFF 2px;
-    border-left: solid #FFFFFF 2px;
-    border-right: solid #FFFFFF 2px;
-    margin-right: auto;
-    margin-left: auto;
+	border-top: solid #FFFFFF 2px;
+	border-left: solid #FFFFFF 2px;
+	border-right: solid #FFFFFF 2px;
+	margin-right: auto;
+	margin-left: auto;
 	padding: 5px;
 	padding-left: 15px;
 	padding-right: 15px;
