@@ -3,6 +3,7 @@
 	<title><?php echo title; ?></title>
 	<link rel="stylesheet" type="text/css" href="<?php echo main_css; ?>" />
 	<link rel="stylesheet" type="text/css" href="<?php echo columns_css; ?>" />
+        <script src="<?php echo jquery; ?>"></script>
 	<script src="<?php echo sorttable; ?>"></script>
 </head>
 
