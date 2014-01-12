@@ -1,6 +1,7 @@
 <?php
 /* Where is your stylesheet? */
 define('main_css', '/css/main.css');
+define('columns_css', '/css/columns.css');
 
 /* Default is to use jquery's cdn */
 define('jquery', 'http://code.jquery.com/jquery-1.10.1.min.js');

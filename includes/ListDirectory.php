@@ -35,7 +35,7 @@ class ListDirectory {
 		foreach($columns as $key => $col) {
 			//if(!in_array($name, $columns)) continue;
 			if(!isset($this->columns[$col])) continue;
-			echo "\t\t\t<th>" . $col . "</th>\n";
+			echo "\t\t\t<th class='$col'>" . $col . "</th>\n";
 		}
 		echo "\t\t</tr>\n";
 		echo "\t</thead>\n\n";
@@ -49,9 +49,9 @@ class ListDirectory {
 				$func = $this->columns[$col];
 				$r = $func($dir);
 				if (isset($r['customkey'])) {
-					echo "\t\t\t<td sorttable_customkey='" . $r['customkey'] . "'>";
+					echo "\t\t\t<td class='$col' sorttable_customkey='" . $r['customkey'] . "'>";
 				} else {
-					echo "\t\t\t<td>";
+					echo "\t\t\t<td class='$col'>";
 				}
 				echo $r['data'] . "</td>\n";
 			}
