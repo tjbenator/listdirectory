@@ -2,9 +2,9 @@
 class ListDirectory {
 	private $columns = array();
 	private $excludes = array('includes');
-	private $directory;
+	private $directories;
 	function __construct($directory = "./*") {
-		$this->directory = $directory;
+		$this->directories = glob($directory, GLOB_BRACE);
         }
 
 	public function addExclude($path) {
@@ -23,7 +23,11 @@ class ListDirectory {
 	}
 
 	public function setDirectory($dir) {
-		$this->directory = $dir;
+		$this->directories = glob($dir, GLOB_BRACE);
+	}
+
+	public function addDirectory($dir) {
+		$this->directories = array_merge($this->directories, glob($dir, GLOB_BRACE));
 	}
 
 	public function display($columns = 'Filename Size') {
@@ -41,7 +45,7 @@ class ListDirectory {
 		echo "\t</thead>\n\n";
 
 		echo "\t<tbody>\n";
-		foreach(glob($this->directory, GLOB_BRACE) as $key => $dir) {
+		foreach($this->directories as $key => $dir) {
 			if ($this->checkExcludes($dir)) continue;
 			echo "\t\t<tr>\n";
 			foreach ($columns as $key => $col) {

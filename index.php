@@ -16,7 +16,10 @@ $init = "includes/init.php"; $find = true; while ($find) { if (file_exists($init
 define('title',  $_SERVER['REQUEST_URI']);
 
 /* Define the directory you want to list */
-define('directory', './*');
+$ListDirectory->setDirectory("./*");
+
+/* You can also include additional directories to list.
+//$ListDirectory->addDirectory("./example/*");
 
 /**
  Define files that you want to exclude in this directory. Can be realtive paths, full path, or just filename. 
@@ -48,7 +51,6 @@ include(header);
 
 echo "<div class='content'>" . breadcrumbs() . "</div>";
 echo "<div class='content'>";
-$ListDirectory->setDirectory(directory);
 $ListDirectory->display(columns);
 echo "</div>";
 
