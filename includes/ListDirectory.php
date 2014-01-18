@@ -41,7 +41,7 @@ class ListDirectory {
 		echo "\t</thead>\n\n";
 
 		echo "\t<tbody>\n";
-		foreach(glob($this->directory) as $key => $dir) {
+		foreach(glob($this->directory, GLOB_BRACE) as $key => $dir) {
 			if ($this->checkExcludes($dir)) continue;
 			echo "\t\t<tr>\n";
 			foreach ($columns as $key => $col) {
